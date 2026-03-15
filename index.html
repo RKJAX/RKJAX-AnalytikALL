@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnalytikALL Markets</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="label">AnalytikALL</p>
+        <h1>Market Radar Pro</h1>
+      </div>
+      <div class="currency-switch" role="group" aria-label="Выбор валюты">
+        <button class="currency-btn active" data-currency="usd">USD</button>
+        <button class="currency-btn" data-currency="kzt">KZT</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="markets-panel">
+        <h2>Список рынков</h2>
+        <p class="panel-subtitle">Скролл списка и быстрый выбор пары</p>
+        <div id="marketsList" class="markets-list" aria-live="polite"></div>
+      </aside>
+
+      <section class="chart-panel">
+        <div class="chart-header">
+          <div>
+            <p class="label">Текущая пара</p>
+            <h2 id="pairTitle">Загрузка...</h2>
+          </div>
+          <div class="quote-box">
+            <span class="label">Котировка</span>
+            <strong id="quoteValue">--</strong>
+            <small id="quoteChange">--</small>
+          </div>
+        </div>
+
+        <canvas id="priceChart" width="900" height="420" aria-label="График котировки"></canvas>
+        <p id="status" class="status">Загрузка данных...</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
